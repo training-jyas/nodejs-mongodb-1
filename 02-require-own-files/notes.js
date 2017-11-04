@@ -18,4 +18,4 @@ const nm = 'RTST';
 module.exports.addNote = addNote;
 module.exports.add = add;
 // module.exports.sub = sub;
-module.exports.name = nm;
+module.exports.age = 30;
