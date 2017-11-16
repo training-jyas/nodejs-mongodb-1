@@ -1,5 +1,6 @@
 // const MongoClient = require('mongodb').MongoClient;
-const {MongoClient, ObjectID} = require('mongodb');
+// const ObjectID = require('mongodb').ObjectID;
+const {MongoClient, ObjectID} = require('mongodb'); // this is called destructing syntax
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   if (err) {
@@ -8,27 +9,27 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   console.log('Connected to MongoDB server');
 
   // deleteMany
-  // db.collection('Todos').deleteMany({text: 'Eat lunch'}).then((result) => {
+  // db.collection('Todos').deleteMany({completed: false}).then((result) => {
   //   console.log(result);
   // });
 
   // deleteOne
-  // db.collection('Todos').deleteOne({text: 'Eat lunch'}).then((result) => {
+  // db.collection('Todos').deleteOne({completed: true}).then((result) => {
   //   console.log(result);
   // });
 
   // findOneAndDelete
-  // db.collection('Todos').findOneAndDelete({completed: false}).then((result) => {
+  // db.collection('Todos').findOneAndDelete({completed: true}).then((result) => {
   //   console.log(result);
   // });
 
   // db.collection('Users').deleteMany({name: 'Andrew'});
 
-  db.collection('Users').findOneAndDelete({
-    _id: new ObjectID("57ac8d47878a299e5dc21bc8")
+  db.collection('Todos').findOneAndDelete({
+    _id: new ObjectID("5a029695799bae067cb2af74")
   }).then((results) => {
     console.log(JSON.stringify(results, undefined, 2));
   });
 
-  // db.close();
+  db.close();
 });
