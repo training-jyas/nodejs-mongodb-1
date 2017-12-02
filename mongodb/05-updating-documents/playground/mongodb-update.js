@@ -7,21 +7,21 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   }
   console.log('Connected to MongoDB server');
 
-  db.collection('Todos').findOneAndUpdate({
-    _id: new ObjectID('5a0296967400c7067d35ee3d')
-  }, {
-    $set: {
-      completed: false,
-      text: 'Something not to do'
-    }
-  }, {
-    returnOriginal: false
-  }).then((result) => {
-    console.log(result);
-  });
+  // db.collection('Todos').findOneAndUpdate({
+  //   _id: new ObjectID('5a22307b4386e6145a91dd20')
+  // }, {
+  //   $set: {
+  //     completed: false,
+  //     text: 'This record is updated now now'
+  //   }
+  // }, {
+  //   returnOriginal: false
+  // }).then((result) => {
+  //   console.log(result);
+  // });
 
   db.collection('Users').findOneAndUpdate({
-    _id: new ObjectID('5a0287bdb2c248033068674e')
+    _id: new ObjectID('5a01c73532124420adcc0736')
   }, {
     $set: {
       name: 'RTST'
